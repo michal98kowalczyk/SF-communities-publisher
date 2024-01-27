@@ -1,0 +1,4 @@
+DevTrail1:
+  sites: ["ExpTest1", "ExpTest2", "ExpTest3"]
+DevTrail2:
+  sites: ["ExpTest1", "ExpTest2"]

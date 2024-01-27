@@ -1,0 +1,15 @@
+loginWeb:
+  cmd: "sf org login web --alias {org}"
+  params: ["org"]
+saveAuth:
+  cmd: "sf org display --target-org {org} --verbose --json > authFiles/auth-{file}.json"
+  params: ["org", "file"]
+loginUrl:
+  cmd: "sf org login sfdx-url --sfdx-url-file authFiles/auth-{file}.json --alias {org}"
+  params: ["file", "org"]
+publish:
+  cmd: "sf community publish --name {site} --target-org {org}"
+  params: ["site", "org"]
+logout:
+  cmd: "sf org logout --target-org {org} --no-prompt"
+  params: ["org"]
