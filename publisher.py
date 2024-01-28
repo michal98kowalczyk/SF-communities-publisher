@@ -15,6 +15,7 @@ LOGIN_URL = 'loginUrl'
 LOGOUT_PARAM = 'logout'
 SITES = 'sites'
 PUBLISH_COMMAND = 'publish'
+URL_PARAM = 'url'
 
 class Publisher:
     def __init__(self, org):
@@ -30,7 +31,7 @@ class Publisher:
                
     def loginWeb(self):
         print('\n Now you will be redirected to your browser, please login using standard credentials\n')
-        loginWebCommand = self.commands[LOGIN_WEB][COMMAND_PARAM].format(org=self.org)
+        loginWebCommand = self.commands[LOGIN_WEB][COMMAND_PARAM].format(org=self.org, url=self.config[URL_PARAM])
         self.runCommand(loginWebCommand)
         self.saveAuth()
 

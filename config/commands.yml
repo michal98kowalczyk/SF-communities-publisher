@@ -1,6 +1,6 @@
 loginWeb:
-  cmd: "sf org login web --alias {org}"
-  params: ["org"]
+  cmd: "sf org login web --instance-url {url} --alias {org} "
+  params: ["org", "url"]
 saveAuth:
   cmd: "sf org display --target-org {org} --verbose --json > authFiles/auth-{file}.json"
   params: ["org", "file"]
