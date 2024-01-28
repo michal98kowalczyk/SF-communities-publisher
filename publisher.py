@@ -33,7 +33,6 @@ class Publisher:
         loginWebCommand = self.commands[LOGIN_WEB][COMMAND_PARAM].format(org=self.org)
         self.runCommand(loginWebCommand)
         self.saveAuth()
-        self.loginUrl()
 
     def loginUrl(self):
         loginUrlCommand = self.commands[LOGIN_URL][COMMAND_PARAM].format(file=self.org,org=self.org)
@@ -45,6 +44,9 @@ class Publisher:
         self.runCommand(logoutCommand)
 
     def saveAuth(self):
+        if not os.path.exists(AUTH_FILES_DIR):
+            os.mkdir(AUTH_FILES_DIR)
+
         saveCommand = self.commands[SAVE_COMMAND][COMMAND_PARAM].format(org=self.org,file=self.org)
         self.runCommand(saveCommand)
 
