@@ -59,6 +59,7 @@ class Publisher:
             print('\nPublishing {site}...'.format(site=site))
             publishCommand = self.commands[PUBLISH_COMMAND][COMMAND_PARAM].format(site=site, org=self.org)
             self.runCommand(publishCommand)
+            time.sleep(30)
 
         self.logout()
 
